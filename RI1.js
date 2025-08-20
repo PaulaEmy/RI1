@@ -1,3 +1,4 @@
+
 personagens = [
     {
         nome: "Steve Rogers",
@@ -75,35 +76,56 @@ personagens = [
 
 for (let x = 0; x < personagens.length; x++) {
     for (let y = 0; y < personagens.length; y++) {
+        let pntA = 0
+        let pntB = 0
         if (x !== y) {
             const personagemA = personagens[x];
             const personagemB = personagens[y];
 
             if (personagemA.velocidade > personagemB.velocidade) {
                 console.log(personagemA.codinome + " é mais rápido que " + personagemB.codinome + "\n");
+                pntA += 1
             } else if (personagemA.velocidade < personagemB.velocidade) {
                 console.log(personagemB.codinome + " é mais rápido que " + personagemA.codinome + "\n");
+                pntB += 1
             } else {
                 console.log(personagemA.codinome + " e " + personagemB.codinome + " possuem a mesma velocidade \n");
+                pntA += 1
+                pntB += 1
             }
 
             if (personagemA.forca > personagemB.forca) {
                 console.log(personagemA.codinome + " é mais forte que " + personagemB.codinome + "\n");
+                pntA += 1
             } else if (personagemA.forca < personagemB.forca) {
                 console.log(personagemB.codinome + " é mais forte que " + personagemA.codinome + "\n");
+                pntB += 1
             } else {
                 console.log(personagemA.codinome + " e " + personagemB.codinome + " possuem a mesma força \n");
+                pntA += 1
+                pntB += 1
             }
 
             if (personagemA.resistencia > personagemB.resistencia) {
                 console.log(personagemA.codinome + " é mais resistente que " + personagemB.codinome + "\n");
+                pntA += 1
             } else if (personagemA.resistencia < personagemB.resistencia) {
                 console.log(personagemB.codinome + " é mais resistente que " + personagemA.codinome + "\n");
+                pntB += 1
             } else {
                 console.log(personagemA.codinome + " e " + personagemB.codinome + " possuem a mesma resistência \n");
+                pntA += 1
+                pntB += 1
             }
+
+            if (pntA > pntB) {
+                console.log("\x1b[31m" + personagemA.codinome + " ganharia do " + personagemB.codinome + "\x1b[0m\n");
+            } else if (pntB > pntA) {
+                console.log("\x1b[31m" + personagemB.codinome + " ganharia do " + personagemA.codinome + "\x1b[0m\n");
+            } 
         }
     }
 }
+
 
 
